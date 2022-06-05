@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const userRoutes = require('./user-routes');
+const reactionRoutes = require('./reaction-routes');
 
-// add prefix of `/pizzas` to routes created in `pizza-routes.js`
+router.use('/reaction', reactionRoutes);
 router.use('/user', userRoutes);
 
 module.exports = router;
