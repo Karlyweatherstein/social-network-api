@@ -77,8 +77,7 @@ const thoughtController = {
       .then(({ username }) => {
         return User.findOneAndUpdate(
           { username: username },
-          { $pull: { thoughts: params.id } },
-          { new: true }
+          { $pull: { thoughts: params.id } }
         )
       })
     .then(dbUserData => {
