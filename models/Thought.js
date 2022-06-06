@@ -45,8 +45,8 @@ const ThoughtSchema = new Schema({
         get: (createdAtVal) => dateFormat(createdAtVal)
     },
     username: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+        type: String
+        // ref: 'User'
     },
     reactions: [ReactionSchema]
     },
@@ -59,11 +59,6 @@ const ThoughtSchema = new Schema({
     }
 
 );
-
-//Virtual that retrieves the length of the thought's reactions array field 
-ThoughtSchema.virtual('reactionCount').get(function() {
-    return this.replies.length;
-});
 
 
 const Thought = model('Thought', ThoughtSchema);
